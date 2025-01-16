@@ -1,2 +1,2 @@
 # Sanber63-Cypress-Kelompok12
-Dibuat untuk memenuhi penilaian dari tugas kelompok 12
+Test Repo ini dibuat untuk memenuhi penilaian dari Tugas .....
