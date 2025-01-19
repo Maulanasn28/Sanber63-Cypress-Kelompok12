@@ -1,0 +1,13 @@
+{
+    "validUser": {
+      "username": "toko17jakarta",
+      "email": "dummy",  
+      "password": "babyPassword123"
+    },
+    "invalidUser": {
+      "username": "toko17jakarta",
+      "email": "invalidEmail", 
+      "password": "123"
+    }
+  }
+  
