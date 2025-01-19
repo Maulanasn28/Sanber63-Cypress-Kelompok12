@@ -2,6 +2,7 @@ import homepage from "../support/pageObject/homepage";
 import signIn from "../support/pageObject/signIn";
 
 describe('userSignIn', () => {
+
     beforeEach(() => {
         cy.visit('')
         cy.verifyTittlePage('.base', 'Home Page')
