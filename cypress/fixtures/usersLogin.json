@@ -1,0 +1,10 @@
+{
+    "validUser": {
+      "email": "qa999magento@mail.com",  
+      "password": "Magento_SoftwareTestingBoard"
+    },
+    "invalidUser": {
+      "email": "qamagento@mail.com", 
+      "password": "Magento_SoftwareTestingBoard"
+    }
+  }
