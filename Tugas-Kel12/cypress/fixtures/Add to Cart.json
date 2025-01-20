@@ -1,0 +1,34 @@
+{
+    "describe": "Add to Cart Test",
+    "beforeEach": {
+      "actions": [
+        { "cy.visit": "" },
+        { "cy.login": ["SayaPelajar12345@gmail.com", "SayaPelajar12345"] }
+      ]
+    },
+    "tests": [
+      {
+        "it": "Add to Cart",
+        "actions": [
+          { "cy.addToCart": [1, 5, 169, 59] },
+          { "cy.get": ".message-success > div" },
+          { "cy.should": { "include.text": "You added Cassia Funnel Sweatshirt to your shopping cart." } }
+        ]
+      },
+      {
+        "it": "Add to Cart qty 2",
+        "actions": [
+          { "cy.addToCart": [2, 1, 168, 49, 2] }
+        ]
+      },
+      {
+        "it": "Add to Cart not selected size and color",
+        "only": true,
+        "actions": [
+          { "cy.CartNegative": [4, 7, null, null, 2] },
+          { "cy.get": "#super_attribute\\[143\\]-error" },
+          { "cy.should": { "include.text": "This is a required field." } }
+        ]
+      }
+    ]
+  }
