@@ -6,6 +6,6 @@ Nama Kelompok :
 2. Alzira Lutifa : alziralutifah (Check Out)
 3. Rila Afhrila : rilaaar (Edit Address book)
 4. Eva Murtiawani : evamurtia (Create an Account)
-5. Rasikha Diyah : rasikhadiyahs
+5. Rasikha Diyah : rasikhadiyahs (Login)
 6. Blandin Sonya : onn07
 7. Ananda Bella
