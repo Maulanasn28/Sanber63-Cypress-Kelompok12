@@ -99,6 +99,42 @@ describe('Processed Checkout', () => {
       checkoutPage.clickContinueShopping();
   })
 
+  it('positive - Checkout success by add another address', () => {  
+    //Enter Shipping Details
+    checkoutPage.verifyShippingTitle(checkout.shippingAddress.shipping_title);
+    checkoutPage.verifyShippingUrl(checkout.shippingAddress.shipping_url);
+
+    checkoutPage.clickNewAddress();
+    checkoutPage.verifyAddressTitle(checkout.shippingAddress.shipping_title);
+
+    checkoutPage.inputCompany(checkout.anotherAddress.company);
+    checkoutPage.inputStreet(checkout.anotherAddress.street);
+    checkoutPage.inputCity(checkout.anotherAddress.city);
+    checkoutPage.inputState(checkout.anotherAddress.state);
+    checkoutPage.inputPostcode(checkout.anotherAddress.postcode);
+    checkoutPage.inputCountry(checkout.anotherAddress.country);
+    checkoutPage.inputTelephone(checkout.anotherAddress.phone);
+    checkoutPage.checkSaveAddress();
+
+    checkoutPage.clickShipHere();
+    checkoutPage.verifyNewAddress(checkout.shippingAddress.city2);
+
+    checkoutPage.selectShippingMethod();   
+
+    checkoutPage.submitShipping();
+    
+    checkoutPage.verifyPaymentTitle(checkout.shippingAddress.payment_title);
+    checkoutPage.verifyPaymentUrl(checkout.shippingAddress.payment_url);
+    checkoutPage.checkBillingSameAsShipping();
+    checkoutPage.clickPlaceOrder();
+
+    checkoutPage.verifyOrderSuccessMessage1(checkout.shippingAddress.verifySuccess_1);
+    checkoutPage.verifyOrderSuccessMessage3(checkout.shippingAddress.verifySuccess_3);
+    checkoutPage.verifyOrderSuccessUrl(checkout.shippingAddress.success_url);
+
+    checkoutPage.clickContinueShopping();
+})
+
   it('positive - Checkout success by selecting a saved address', () => {
     checkoutPage.verifyShippingTitle(checkout.shippingAddress.shipping_title);
     checkoutPage.verifyShippingUrl(checkout.shippingAddress.shipping_url);
