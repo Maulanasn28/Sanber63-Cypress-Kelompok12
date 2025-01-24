@@ -22,7 +22,7 @@ class LoginPage {
     }
   
     verifyLoginError() {
-      cy.get('.error-message').should('be.visible');
+      cy.get('.message-error').should('be.visible');
     }
   
     verifyValidationErrors() {

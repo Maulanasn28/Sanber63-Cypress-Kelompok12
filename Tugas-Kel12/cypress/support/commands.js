@@ -10,13 +10,31 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => {
-    cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/Sign In');
-    cy.get('#email').type(email);
-    cy.get('#pass').type(password);
-    cy.get('#send2').click();
-  });
-  
+Cypress.Commands.add('signInOption', (email, password) => {
+  cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/Sign In');
+  cy.get('#email').type(email);
+  cy.get('#pass').type(password);
+  cy.get('#send2').click();
+});
+
+Cypress.Commands.add('signInInvalid', (email, password) => {
+  // Pastikan halaman login dikunjungi terlebih dahulu
+  cy.visit('https://magento.softwaretestingboard.com/customer/account/login/');
+  cy.get('#email').should('be.visible').type(email); // Verifikasi elemen terlihat sebelum mengetik
+  cy.get('#pass').should('be.visible').type(password);
+  cy.get('#send2').should('be.visible').click();
+
+  // Verifikasi pesan error
+  cy.get('.message-error').should(
+    'contain.text',
+    'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.'
+  );  
+});
+
+Cypress.Commands.add('verifyTitlePage', (selector, expectedTitle) => {
+  cy.get(selector).should('contain.text', expectedTitle);
+});
+
   Cypress.Commands.add('addToCart', (category, product, size, color, qty = 1) => {
     cy.visit('#info');
     cy.get(`#ui-id-3 > span`).click();
