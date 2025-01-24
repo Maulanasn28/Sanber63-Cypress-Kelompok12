@@ -1,12 +1,10 @@
 [
   {
-      "email": "qa999magento@mail.com",  
-      "password": "Magento_SoftwareTestingBoard"
+    "email": "qa999magento@mail.com",
+    "password": "Magento_SoftwareTestingBoard"
   },
-
   {
-      "email": "qamagento@mail.com", 
-      "password": "Magento_SoftwareTestingBoard"
+    "email": "invalid_user@mail.com",
+    "password": "wrong_password"
   }
-  
 ]
