@@ -100,7 +100,7 @@ describe('Processed Checkout', () => {
   })
 
   it('positive - Checkout success by add another address', () => {  
-    //Enter Shipping Details
+    
     checkoutPage.verifyShippingTitle(checkout.shippingAddress.shipping_title);
     checkoutPage.verifyShippingUrl(checkout.shippingAddress.shipping_url);
 
